@@ -1,7 +1,16 @@
-import React from "react";
+import RightCards from "./RightCards";
 
-const RightContent = () => {
-  return <div className="h-full w-3/4 bg-blue-500">RightContent</div>;
+const RightContent = (props) => {
+  return (
+    <div
+      id="right"
+      className="h-full flex rounded-4xl flex-nowrap gap-10 overflow-x-auto w-3/4 p-6"
+    >
+      {props.users.map(function (elem, idx) {
+        return <RightCards img={elem.img} tag={elem.tag} key={idx} id={idx} />;
+      })}
+    </div>
+  );
 };
 
 export default RightContent;
